@@ -20,13 +20,13 @@ export default function FilterContainer({
 
             <div class="ui buttons">
                 <button 
-                class={currentSort === "name" ? "ui button selected" : "ui button"}
+                className={currentSort === "name" ? "ui button selected" : "ui button"}
                 onClick={onChangeCurrentSort}
                 name="name"
                 >Sort By Name</button>
 
                 <button 
-                class={currentSort === "weight" ? "ui button selected" : "ui button"}
+                className={currentSort === "weight" ? "ui button selected" : "ui button"}
                 onClick={onChangeCurrentSort}
                 name="weight"
                 >Sort by Weight</button>

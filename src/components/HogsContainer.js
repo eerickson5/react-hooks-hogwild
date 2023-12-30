@@ -7,6 +7,7 @@ export default function HogsContainer({hogs}){
     const [greasedOnly, setGreasedOnly] = React.useState(false)
     const [currentSort, setCurrentSort] = React.useState("name")
 
+    console.log("received: ", hogs)
     const HogCards = hogs
     .filter( hog => {
         if(!greasedOnly) return true
@@ -24,7 +25,7 @@ export default function HogsContainer({hogs}){
             <Hog hog={hog} key={hog.name}/>
         )
     })
-
+    
     return(
         <div>
             <FilterContainer 
