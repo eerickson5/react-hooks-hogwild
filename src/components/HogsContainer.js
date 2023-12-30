@@ -5,6 +5,7 @@ import FilterContainer from "./FilterContainer";
 
 export default function HogsContainer({hogs}){
     const [greasedOnly, setGreasedOnly] = React.useState(true)
+    const [currentSort, setCurrentSort] = React.useState("name")
 
     const HogCards = hogs
     .filter( hog => {
@@ -21,8 +22,10 @@ export default function HogsContainer({hogs}){
     return(
         <div>
             <FilterContainer 
-            active={greasedOnly} 
-            flipActive={() => setGreasedOnly(!greasedOnly)}
+            greasedActive={greasedOnly} 
+            flipGreasedActive={() => setGreasedOnly(!greasedOnly)}
+            currentSort={currentSort}
+            onChangeCurrentSort={ e => setCurrentSort(e.target.name)}
             />
             <ul className="ui grid container cards">
                 {HogCards}
